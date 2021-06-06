@@ -5,6 +5,10 @@ import akka.actor.typed.{ActorRef, ActorSystem, Behavior}
 
 import scala.collection.mutable.ListBuffer
 
+/**
+ * Created by Saurav Sahu on 6th June 2021
+ */
+
 sealed class QueryElem
 case class Select(fields: List[String]) extends QueryElem
 case class Filter(condition: EmployeeRecord => Boolean) extends QueryElem
