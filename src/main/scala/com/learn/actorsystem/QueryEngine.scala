@@ -12,7 +12,8 @@ case class Filter(condition: EmployeeRecord => Boolean) extends QueryElem
 case class Query(records: Seq[EmployeeRecord], queryElements: Seq[QueryElem])
 case class FinalResult(records : Seq[EmployeeRecord])
 
-// Route -> QueryEngine -> QueryExecutor -> FilterPerformer -> SelectPerformer
+// Communication : QueryEngine -> FilterPerformer -> SelectPerformer -> Dashboard
+
 object Dashboard{
   def apply(): Behavior[FinalResult] = Behaviors.receive{
     (context, msg) =>
